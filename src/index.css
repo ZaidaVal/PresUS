@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  --hope: #f3b23c;
+  --duty: #1f6b48;
+  --spend: #e07a5f;
+  --paper: #f7f1e4;
+  --ink: #1c2e24;
+  --cream: #fff8ed;
+  color-scheme: light;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+@theme {
+  --color-hope: #f3b23c;
+  --color-duty: #1f6b48;
+  --color-spend: #e07a5f;
+  --color-paper: #f7f1e4;
+  --color-ink: #1c2e24;
+  --color-cream: #fff8ed;
+  --color-emerald-800: #34a06a;
+  --color-emerald-900: #185a3c;
+  --color-emerald-950: #1f6b48;
+  --color-amber-50: #fff8ed;
+  --color-amber-100: #fce8c4;
+  --color-amber-200: #f3b23c;
+}
+
+.font-display {
+  font-family: "Palatino Linotype", Palatino, "Iowan Old Style", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.ink {
+  color: var(--ink);
+}
+
+.card {
+  border-radius: 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--duty) 10%, transparent);
+  background: rgb(255 255 255 / 0.88);
+  padding: 1.1rem 1.15rem;
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--hope) 10%, rgb(28 23 16 / 0.03));
+}
+
+.tile {
+  border-radius: 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--duty) 10%, transparent);
+  background: rgb(255 255 255 / 0.92);
+  padding: 1rem;
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--hope) 12%, transparent);
+}
+
+.hero {
+  overflow: hidden;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  color: var(--cream);
+  background:
+    radial-gradient(120% 90% at 100% -10%, color-mix(in srgb, var(--hope) 40%, transparent) 0%, transparent 52%),
+    radial-gradient(90% 70% at -8% 110%, color-mix(in srgb, var(--spend) 26%, transparent) 0%, transparent 48%),
+    var(--duty);
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--duty) 22%, transparent);
+}
+
+.btn-primary {
+  border-radius: 9999px;
+  background: var(--duty);
+  color: var(--cream);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background:
+    radial-gradient(1000px 420px at 8% -8%, #f8d4a0 0%, transparent 55%),
+    radial-gradient(800px 380px at 110% 8%, #f5c5b0 0%, transparent 50%),
+    radial-gradient(700px 360px at 50% 110%, #c5e8c4 0%, transparent 52%),
+    var(--paper);
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+.app-bottom-nav {
+  padding-bottom: max(0.4rem, env(safe-area-inset-bottom, 0px));
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+.data-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-inline: -0.25rem;
+}
+
+.data-table {
+  width: 100%;
+  min-width: 32rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.data-table th {
+  padding: 0.35rem 0.65rem 0.5rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--duty) 14%, transparent);
+  text-align: left;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 55%, transparent);
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 0.7rem 0.65rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--duty) 8%, transparent);
+  vertical-align: middle;
+}
+
+.data-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.data-table .nowrap {
+  white-space: nowrap;
+}
+
+.data-table tbody tr[data-open] {
+  cursor: pointer;
+}
+
+.data-table tbody tr[data-open]:hover,
+.data-table tbody tr[data-open]:focus-visible {
+  background: color-mix(in srgb, var(--hope) 12%, white);
+  outline: none;
+}
+
+.data-table-actions {
+  width: 1%;
+  white-space: nowrap;
+  text-align: right;
+}
+
+@media (max-width: 639px) {
+  .data-table {
+    min-width: 28rem;
+  }
+}
